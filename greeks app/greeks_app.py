@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import streamlit as st
 
-from blackscholes import BlackScholes
+from blackscholes.blackscholes import BlackScholes
 
 st.title("Black-Scholes Numerical Greeks Explorer")
 
