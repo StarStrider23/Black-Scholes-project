@@ -4,6 +4,11 @@ import streamlit as st
 
 from blackscholes import BlackScholes
 
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+
 st.title("Black-Scholes Numerical Greeks Explorer")
 
 S = st.slider("Stock Price (S)", 50.0, 150.0, 100.0)
