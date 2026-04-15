@@ -45,7 +45,9 @@ $$ P = K e^{-r(T - t)} - S + C = K e^{- r (T - t)} N(-d_{2}) - S N(-d_{1}) $$
 
 Delta measures the sensitivity of the option price to changes in the underlying asset price:
 
+
 $$ \Delta = frac{\partial V}{\partial S} $$
+
 ​
 Intuitively, Delta represents the hedge ratio, i.e. how many units of the underlying asset are needed to replicate the option’s price changes. For a call option, Delta lies between 0 and 1 whereas it lies between -1 and 0 for a put option.. 
 
