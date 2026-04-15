@@ -71,7 +71,7 @@ Theta measures sensitivity to time decay:
 
 $$ \Theta = \frac{\partial V}{\partial t} $$
 ​
-However, in practice one sometimes sets t to zero which then changes the definition to $\Theta = -frac{\partial V}{\partial T}$. This convention is also used in the project.
+However, in practice one sometimes sets t to zero which then changes the definition to. This convention is also used in the project.
 
 Theta measures the rate at which an option loses value as time passes, holding all else constant.
 
