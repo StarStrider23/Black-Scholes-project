@@ -93,7 +93,7 @@ $$ \Pi = V - \Delta S $$
 
 Using Itô’s lemma, the stochastic term cancels and under continuous rebalancing the portfolio evolves deterministically:
 
-$$ d \Pi = \bigg( \frac{\partial t}{\partial V} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2}\bigg) dt $$
+$$ d \Pi = \bigg( \frac{\partial V}{\partial t} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2}\bigg) dt $$
 
 In the Black–Scholes framework no-arbitrage implies:
 
