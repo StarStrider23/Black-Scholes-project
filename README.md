@@ -22,7 +22,7 @@ Where $$ V = V (S, t) $$ is price of the option of the underlying asset $$ S $$ 
 
 Under these assumptions, the price of a European call option can be expressed analytically.
 
-$$ C = S_{0} \Phi(d_{1}) - K \exp(- r T) \Phi(d_{2}) $$
+$$ C = S_{0} \Phi(d_{1}) - K e^{- r T} \Phi(d_{2}) $$
 
 Where where $$ S_{0} $$ is the current stock price, $$ K $$ is the strike price, $$ T $$ is time to maturity and $$ \Phi(d) $$ 
 is the standard normal cumulative distribution function. Finally, $$ d_{1} $$ and $$ d_{2} $$ are quantities that are defined as below.
