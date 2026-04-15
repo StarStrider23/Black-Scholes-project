@@ -85,6 +85,22 @@ $$ \rho = \frac{\partial V}{\partial r} $$
 
 It is generally less significant in short-dated options but becomes more relevant for longer maturities.
 
+## Delta Hedging
+
+Delta hedging aims to eliminate sensitivity to small changes in the underlying price by constructing a locally risk-free portfolio. A delta-hedged portfolio is formed as:
+
+$$ \Pi = V - \Delta S $$
+
+Using Itô’s lemma, the stochastic term cancels, and under continuous rebalancing the portfolio evolves deterministically:
+
+$$ d \Pi = \bigg( \frac{\partial t}{\partial V} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2}\bigg) dt $$
+
+In the Black–Scholes framework, no-arbitrage implies:
+
+$$ d \Pi = r \Pi dt $$
+
+which leads to the Black–Scholes PDE. In practice, hedging is discrete, so $\Delta$ is updated at finite intervals, resulting in hedging error that depends on rebalancing frequency and volatility.
+
 # Methodology
 
 # Structure
