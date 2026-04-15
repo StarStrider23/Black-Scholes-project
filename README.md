@@ -45,36 +45,36 @@ $$ P = K e^{-r(T - t)} - S + C = K e^{- r (T - t)} N(-d_{2}) - S N(-d_{1}) $$
 
 Delta measures the sensitivity of the option price to changes in the underlying asset price:
 
-$$ Δ = frac{\partial V}{\partial S} $$
+$$ \Delta = frac{\partial V}{\partial S} $$
 ​	 
 Intuitively, Delta represents the hedge ratio, i.e. how many units of the underlying asset are needed to replicate the option’s price changes. For a call option, Delta lies between 0 and 1 whereas it lies between -1 and 0 for a put option.. 
 
 ### Gamma (Γ)
 Gamma measures the rate of change of Delta with respect to the underlying asset price:
 
-$$ Γ = frac{\partial^2 V}{\partial S^2} $$
+$$ \Gamma = frac{\partial^2 V}{\partial S^2} $$
 ​	
 It captures the curvature of the option price, indicating how stable the Delta hedge is. High Gamma means Delta changes quickly, making hedging more sensitive and requiring more frequent rebalancing.
 
 ### Vega (ν)
 Vega measures sensitivity to volatility:
 
-$$ ν = frac{\partial V}{\partial \sigma} $$
+$$ \nu = frac{\partial V}{\partial \sigma} $$
 ​
 It reflects how much the option price changes when market expectations of volatility change. Options are typically most sensitive to volatility when they are at-the-money (ATM).
 
 ### Theta (Θ)
 Theta measures sensitivity to time decay:
-$$ Θ = frac{\partial V}{\partial t} $$
+$$ \Theta = frac{\partial V}{\partial t} $$
 ​	
-However, in practice one sometimes sets t to zero which then changes the definition to $$ Θ = -frac{\partial V}{\partial T} $$. This convention is also used in the project.
+However, in practice one sometimes sets t to zero which then changes the definition to $$ \Theta = -frac{\partial V}{\partial T} $$. This convention is also used in the project.
 
 Theta measures the rate at which an option loses value as time passes, holding all else constant.
 
 ### Rho (ρ)
 Rho measures sensitivity to the risk-free interest rate:
 
-$$ ρ = frac{\partial V}{\partial r} $$
+$$ \rho = frac{\partial V}{\partial r} $$
 ​	
 It is generally less significant in short-dated options but becomes more relevant for longer maturities.
 
