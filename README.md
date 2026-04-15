@@ -22,7 +22,7 @@ Where $V = V (S, t)$ is price of the option of the underlying asset $S$ at time 
 
 Under these assumptions, the price of a European call option can be expressed analytically.
 
-$$ C = S_{0} N(d_{1}) - K e^{- r T} N(d_{2}) $$
+$$ C = S N(d_{1}) - K e^{- r (T - t)} N(d_{2}) $$
 
 Where where $S_{0}$ is the current stock price, $K$ is the strike price, $T$ is time to maturity and $N(d_{i})$ 
 is the standard normal cumulative distribution function. Finally, $d_{1}$ and $d_{2}$ are quantities that are defined as below.
@@ -31,7 +31,11 @@ $$ d_{1} = \frac{1}{\sigma \sqrt{T - t}} \bigg[log\bigg(\frac{S}{K}\bigg) + \big
 
 $$ d_{2} = d_{1} - \sigma \sqrt{T - t} $$
 
-Intuitively, $d_{1}$ is the z-score (how many standard deviations a data point is above or below the population mean) of the probability that the option will finish in the money (ITM) at maturity under the risk-neutral measure. $d_{2}$ is closely related to $d_{1}$, but adjusted upward by a volatility term which then accounts for the expected growth of the stock price and the uncertainty over time. 
+Intuitively, $d_{1}$ is the z-score (how many standard deviations a data point is above or below the population mean) of the probability that the option will finish in the money (ITM) at maturity under the risk-neutral measure. $d_{2}$ is closely related to $d_{1}$, but adjusted upward by a volatility term which then accounts for the expected growth of the stock price and the uncertainty over time.
+
+The price of a correspondning put option can be derived via the put-call prity and is
+
+$$ P = K e^{-r(T - t)} - S + C = K e^{- r (T - t)} N(-d_{2}) - S N(-d_{1}) $$
 
 # Methodology
 
