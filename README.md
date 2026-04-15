@@ -75,9 +75,7 @@ However, in practice one sometimes sets $t$ to zero which then changes the defin
 
 $$ \Theta = -\frac{\partial V}{\partial T} $$
 
-This convention is also used in the project.
-
-Theta measures the rate at which an option loses value as time passes, holding all else constant.
+This convention is also used in the project. Theta measures the rate at which an option loses value as time passes, holding all else constant.
 
 ### Rho ($\rho$)
 
