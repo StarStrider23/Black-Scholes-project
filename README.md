@@ -18,14 +18,14 @@ The Black–Scholes model is a foundational framework in quantitative finance us
 
 $$ \frac{\partial V}{\partial t} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + r S \frac{\partial V}{\partial S} - rV = 0 $$
 
-Where $$ V = V (S, t) $$ is price of the option of the underlying asset $$ S $$ at time $$ t $$, $$ \sigma $$ is volatiltiy of the stock's returns and r is the risk-free interest rate.    
+Where $V = V (S, t)$ is price of the option of the underlying asset $S$ at time $t$, $\sigma$ is volatiltiy of the stock's returns and r is the risk-free interest rate.    
 
 Under these assumptions, the price of a European call option can be expressed analytically.
 
 $$ C = S_{0} \Phi(d_{1}) - K e^{- r T} \Phi(d_{2}) $$
 
-Where where $S_{0}$ is the current stock price, $$ K $$ is the strike price, $$ T $$ is time to maturity and $$ \Phi(d) $$ 
-is the standard normal cumulative distribution function. Finally, $$ d_{1} $$ and $$ d_{2} $$ are quantities that are defined as below.
+Where where $S_{0}$ is the current stock price, $K$ is the strike price, $T$ is time to maturity and $\Phi(d)$ 
+is the standard normal cumulative distribution function. Finally, $d_{1}$ and $d_{2}$ are quantities that are defined as below.
 
 $$ d_{1} = \frac{1}{\sigma \{T - t}} (log(\frac{S}{K}) + (r + \frac{\sigma^2}{2}) (T - t))$$
 
