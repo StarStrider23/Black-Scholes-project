@@ -70,8 +70,8 @@ It reflects how much the option price changes when market expectations of volati
 Theta measures sensitivity to time decay:
 
 $$ \Theta = \frac{\partial V}{\partial t} $$
-​
-However, in practice one sometimes sets t to zero which then changes the definition.
+
+However, in practice one sometimes sets $t$ to zero which then changes the definition.
 
 $$ \Theta = -\frac{\partial V}{\partial T} $$
 
