@@ -10,7 +10,15 @@ In addition, the project develops a Monte Carlo pricing engine, studies its conv
 
 Finally, the project incorporates implied volatility estimation, completing a full pipeline from pricing to market calibration.
 
-# Models 
+# Background
+
+## Black-Scholes model
+
+The Black–Scholes model is a foundational framework in quantitative finance used to price European-style options. It provides a closed-form solution for option prices under a set of simplifying assumptions about market behavior. At its core, the model assumes that the underlying asset price follows a geometric Brownian motion with constant volatility and drift. 
+
+$$ \frac{\partial V}{\partial S} $$
+
+Under these assumptions, the price of a European call option can be expressed analytically.
 
 # Methodology
 
