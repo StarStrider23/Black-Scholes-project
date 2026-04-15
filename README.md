@@ -14,7 +14,9 @@ Finally, the project incorporates implied volatility estimation, completing a fu
 
 ## Black-Scholes model
 
-The Black–Scholes model is a foundational framework in quantitative finance used to price European-style options. It provides a closed-form solution for option prices under a set of simplifying assumptions about market behavior. At its core, the model assumes that the underlying asset price follows a geometric Brownian motion with constant volatility and drift. Mathematically, the Black-Scholes model is a partial differential equation (PDE) of second order.
+The Black–Scholes model is a foundational framework in quantitative finance used to price European-style options. It provides a closed-form solution for option prices under a set of simplifying assumptions about market behavior. At its core, the model assumes that the underlying asset price follows a geometric Brownian motion with constant volatility and drift. Beyond that, there are also some additional assumptions: constant risk-free interest rate, frictionless markets (no transaction costs or taxes), no arbitrage opportunities exist and of course that the underlying asset doesn't pay dividends. 
+
+Mathematically speaking, the Black-Scholes model is a a second-order linear partial differential equation (PDE).
 
 $$ \frac{\partial V}{\partial t} + \frac{1}{2} \sigma^2 S^2 \frac{\partial^2 V}{\partial S^2} + r S \frac{\partial V}{\partial S} - rV = 0 $$
 
@@ -36,6 +38,45 @@ Intuitively, $d_{1}$ represents a standardized measure of how far the option is 
 The price of a correspondning put option can be derived via the put-call prity.
 
 $$ P = K e^{-r(T - t)} - S + C = K e^{- r (T - t)} N(-d_{2}) - S N(-d_{1}) $$
+
+## The Option Greeks
+
+### Delta (Δ)
+
+Delta measures the sensitivity of the option price to changes in the underlying asset price:
+
+$$ Δ = frac{\partial V}{\partial S} $$
+​	 
+Intuitively, Delta represents the hedge ratio, i.e. how many units of the underlying asset are needed to replicate the option’s price changes. For a call option, Delta lies between 0 and 1 whereas it lies between -1 and 0 for a put option.. 
+
+### Gamma (Γ)
+Gamma measures the rate of change of Delta with respect to the underlying asset price:
+
+$$ Γ = frac{\partial^2 V}{\partial S^2} $$
+​	
+It captures the curvature of the option price, indicating how stable the Delta hedge is. High Gamma means Delta changes quickly, making hedging more sensitive and requiring more frequent rebalancing.
+
+### Vega (ν)
+Vega measures sensitivity to volatility:
+
+$$ ν = frac{\partial V}{\partial \sigma} $$
+​
+It reflects how much the option price changes when market expectations of volatility change. Options are typically most sensitive to volatility when they are at-the-money (ATM).
+
+### Theta (Θ)
+Theta measures sensitivity to time decay:
+$$ Θ = frac{\partial V}{\partial t} $$
+​	
+However, in practice one sometimes sets t to zero which then changes the definition to $$ Θ = -frac{\partial V}{\partial T} $$. This convention is also used in the project.
+
+Theta measures the rate at which an option loses value as time passes, holding all else constant.
+
+### Rho (ρ)
+Rho measures sensitivity to the risk-free interest rate:
+
+$$ ρ = frac{\partial V}{\partial r} $$
+​	
+It is generally less significant in short-dated options but becomes more relevant for longer maturities.
 
 # Methodology
 
