@@ -50,6 +50,7 @@ $$ \Delta = \frac{\partial V}{\partial S} $$
 Intuitively, Delta represents the hedge ratio, i.e. how many units of the underlying asset are needed to replicate the option’s price changes. For a call option, Delta lies between 0 and 1 whereas it lies between -1 and 0 for a put option.
 
 ### Gamma ($\Gamma$)
+
 Gamma measures the rate of change of Delta with respect to the underlying asset price:
 
 $$ \Gamma = \frac{\partial^2 V}{\partial S^2} $$
@@ -57,6 +58,7 @@ $$ \Gamma = \frac{\partial^2 V}{\partial S^2} $$
 It captures the curvature of the option price, indicating how stable the Delta hedge is. High Gamma means Delta changes quickly, making hedging more sensitive and requiring more frequent rebalancing.
 
 ### Vega ($\nu$)
+
 Vega measures sensitivity to volatility:
 
 $$ \nu = \frac{\partial V}{\partial \sigma} $$
@@ -64,6 +66,7 @@ $$ \nu = \frac{\partial V}{\partial \sigma} $$
 It reflects how much the option price changes when market expectations of volatility change. Options are typically most sensitive to volatility when they are at-the-money (ATM).
 
 ### Theta ($\Theta$)
+
 Theta measures sensitivity to time decay:
 
 $$ \Theta = \frac{\partial V}{\partial t} $$
@@ -73,6 +76,7 @@ However, in practice one sometimes sets t to zero which then changes the definit
 Theta measures the rate at which an option loses value as time passes, holding all else constant.
 
 ### Rho ($\rho$)
+
 Rho measures sensitivity to the risk-free interest rate:
 
 $$ \rho = \frac{\partial V}{\partial r} $$
