@@ -110,7 +110,7 @@ Formally, implied volatility $\sigma_{imp}$ is defined as the solution to:
 
 $$ C_{market} = C_{BS}(S, K, r, T, \sigma_{imp}) $$
 
-Since the Black–Scholes formula is not analytically invertible in $\sigma$ the implied volatility must be computed numerically, typically using root-finding methods such as Newton–Raphson:
+Since the Black–Scholes formula is not analytically invertible in $\sigma$, the implied volatility must be computed numerically, typically using root-finding methods such as Newton–Raphson:
 
 $$ \sigma_{n+1} = \sigma_{n} - \frac{C_{BS}(\sigma_{n}) - C_{market}}{\nu(\sigma_{n})} $$
 
