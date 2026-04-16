@@ -33,7 +33,7 @@ $$ d_{1} = \frac{1}{\sigma \sqrt{T - t}} \bigg[log\bigg(\frac{S}{K}\bigg) + \big
 
 $$ d_{2} = d_{1} - \sigma \sqrt{T - t} $$
 
-Intuitively, $d_{1}$ represents a standardized measure of how far the option is from being in the money at maturity under the risk-neutral measure, taking into account both the expected growth of the stock price and its volatility. $d_{2}$ is closely related to $d_{1}$, but adjusted downward by a volatility term, which accounts for uncertainty over the remaining time to maturity. It can be interpreted as a standardized measure of terminal moneyness.
+Intuitively, $d_{1}$ represents a standardized measure of how far the option is from being in-the-money (ITM) at maturity under the risk-neutral measure, taking into account both the expected growth of the stock price and its volatility. $d_{2}$ is closely related to $d_{1}$, but adjusted downward by a volatility term, which accounts for uncertainty over the remaining time to maturity. It can be interpreted as a standardized measure of terminal moneyness.
 
 The price of a correspondning put option can be derived via the put-call prity.
 
