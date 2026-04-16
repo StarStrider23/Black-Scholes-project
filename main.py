@@ -232,12 +232,12 @@ asset = "AAPL"
 S = yf.download(asset, "2026-04-15", "2026-04-16")['Close']
 S = S.iloc[0][asset] # S = 266.42999267578125
 
-date = open("option_expiration_date.txt").read()
+date = open("data/option_expiration_date.txt").read()
 date1 = dt.datetime.strptime(date, "%Y-%m-%d").date()
 
 T = (date1 - dt.datetime.now().date()).days / 365
 
-calls = pd.read_csv("calls_snapshot.csv")
+calls = pd.read_csv("data/calls_snapshot.csv")
 
 calls = calls[(calls['bid'] > 0) & (calls['ask'] > 0)]
 
