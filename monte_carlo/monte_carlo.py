@@ -1,6 +1,6 @@
 import numpy as np
 
-from black_scholes import BlackScholes
+from blacksholes.black_scholes import BlackScholes
 
 def monte_carlo(S_0=100, r=0.05, sigma=0.2, T=1.0, steps=252,
     n_sim=10000, Z=None, rng=None, return_paths=True):
