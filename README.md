@@ -126,6 +126,8 @@ Finally, implied volatility is computed by numerically inverting the Black–Sch
 
 All simulations and analyses are conducted for European call options even though the implemented framework supports both calls and puts. However, this restriction is without loss of generality, since results for put options follow directly from put–call parity.
 
+If not stated otherwise, the computations are done for the following values: $S$ = 100, $K$ = 100, $r$ = 0.05, $\sigma$ = 0.2, $T$ = 1, number of steps = 252
+
 # Structure
 
 The blackscholes folder contains the implemented class for Black-Scholes model, the delta_hedging function and an interactive tool greeks_app, that can be accessed by a link below in the result section. The monte_carlo folder includes the Monte Carlo simulation engine file. The data folder contains the calls_snapshot.csv and option_expiration_date.txt files needed for the implied olatility part. The csv files contains a snapshot of call option prices while the txt files simply contains the information on the maturity date of the options. In the main path, there's  requirements.txt file that is necessary to ensure the proper work of the greeks_app.py interactive tool. Finally, main.py ties everything together and executes the workflow.  
@@ -186,9 +188,9 @@ Monte Carlo estimates are consistent with Black–Scholes results, validating bo
 
 Evaluation of the performance of a delta hedging strategy and quantification of hedging error under discrete rebalancing. A delta-hedged portfolio is constructed and rebalanced at discrete time intervals. The replication error is measured at maturity for different rebalancing frequencies.  
 
-<img width="1200" height="600" alt="Hedging Error vs Rebalancing Error" src="https://github.com/user-attachments/assets/027b662f-475e-4c79-8d49-6273ab2f36b9" />  
+<img width="1200" height="600" alt="HE vs RF" src="https://github.com/user-attachments/assets/20a531d4-b799-44ef-9b3b-b192349dc66e" />
 
-<img width="1440" height="800" alt="Hedging Error vs rebalancing Frequency, Bins" src="https://github.com/user-attachments/assets/6491f4a3-6b9b-4667-a955-f0e5759e2c3a" />  
+<img width="1440" height="800" alt="HE vs RF bins" src="https://github.com/user-attachments/assets/d33601bf-13f8-4c8c-a541-d20a7c926e8b" />
 
 Hedging error decreases as the rebalancing frequency increases, approaching zero in the limit of continuous hedging. Residual error arises from discrete rebalancing and is amplified by higher volatility, illustrating the practical limitations of continuous-time assumptions.  
 
