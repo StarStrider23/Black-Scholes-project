@@ -187,24 +187,23 @@ Monte Carlo estimates are consistent with Black–Scholes results, validating bo
 Computation of implied volatility by inverting the Black–Scholes pricing formula. Implied volatility is obtained numerically using an iterative root-finding method, such as Newton–Raphson, applied to match model prices to observed option prices.
 
 The project considered options with prices near the at-the-money (ATM) region, namely $0.9S < K < 1.1S$, with expiration date 2026-05-15, which implies that T = 28 days or T = 0.07671232876712329 years. The closing price at the end of the day (2026-04-15) of the simulation was $S$ = 266.42999267578125 $. The risk-free interest rate was 0.036119999885559084. 
-
+  
 <img width="1200" height="600" alt="IV" src="https://github.com/user-attachments/assets/005600d9-037a-42d4-b310-e07eb93f7c10" />  
-
-
-| Strike Price $ | ITM   | Actual $\sigma_{imp}$ | NR $\sigma_{imp}$ | Absolute error % |
-| -------------- | ----- | --------------------- | ----------------- | ---------------- |
-|      240       | True  |       0.38135384      |     0.34410769    |       9.77       |
-|      245       | True  |       0.35974761      |     0.33263223    |       7.54       |
-|      250       | True  |       0.3440007       |     0.32293332    |       6.12       |
-|      255       | True  |       0.32684999      |     0.31221437    |       4.48       |
-|      260       | True  |       0.31189653      |     0.30322305    |       2.78       |
-|      265       | True  |       0.30164273      |     0.29711033    |       1.50       |
-|      270       | False |       0.29590548      |     0.29235877    |       1.20       |
-|      275       | False |       0.29090065      |     0.28955827    |       0.46       |
-|      280       | False |       0.28736064      |     0.28696143    |       0.14       |
-|      285       | False |       0.28601788      |     0.28625329    |       0.08       |
-|      290       | False |       0.28613995      |     0.28800836    |       0.65       |  
-
+  
+| Strike Price $ | ITM   | Actual $\sigma_{imp}$ | NR $\sigma_{imp}$ |  Absolute error  | Absolute error % |
+| -------------- | ----- | --------------------- | ----------------- | ---------------- | ---------------- |
+|      240       | True  |       0.38135384      |     0.34410769    |    0.02981965    |       9.77       |
+|      245       | True  |       0.35974761      |     0.33263223    |    0.02016357    |       7.54       |
+|      250       | True  |       0.3440007       |     0.32293332    |    0.01449942    |       6.12       |
+|      255       | True  |       0.32684999      |     0.31221437    |    0.00841760    |       4.48       |
+|      260       | True  |       0.31189653      |     0.30322305    |    0.00274007    |       2.78       |
+|      265       | True  |       0.30164273      |     0.29711033    |    0.00119512    |       1.50       |
+|      270       | False |       0.29590548      |     0.29235877    |    0.00202162    |       1.20       |
+|      275       | False |       0.29090065      |     0.28955827    |    0.00411861    |       0.46       |
+|      280       | False |       0.28736064      |     0.28696143    |    0.00497072    |       0.14       |
+|      285       | False |       0.28601788      |     0.28625329    |    0.00555769    |       0.08       |
+|      290       | False |       0.28613995      |     0.28800836    |    0.00719459    |       0.65       |  
+  
 The numerical procedure converges efficiently to the implied volatility, demonstrating the stability of the implementation. The results highlight how implied volatility serves as a bridge between observed market prices and model parameters.
 
 # Discussion
