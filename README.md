@@ -166,7 +166,8 @@ https://black-scholes-and-greeks-project.streamlit.app
 
 The option expiration date is 2026-05-15, which implies that T = 28 days or T = 0.07671232876712329 years. The closing price at the end of the day (2026-04-15) was $S$ = 266.42999267578125 $. The risk-free interest rate was 0.036119999885559084. 
 
-<img width="1200" height="600" alt="IV" src="https://github.com/user-attachments/assets/005600d9-037a-42d4-b310-e07eb93f7c10" />
+<img width="1200" height="600" alt="IV" src="https://github.com/user-attachments/assets/005600d9-037a-42d4-b310-e07eb93f7c10" />  
+
 
 | Strike Price $ | ITM   | Actual $\sigma_{imp}$ | NR $\sigma_{imp}$ | Absolute error % |
 | -------------- | ----- | --------------------- | ----------------- | ---------------- |
