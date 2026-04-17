@@ -132,9 +132,15 @@ All simulations and analyses are conducted for European call options even though
 
 https://black-scholes-and-greeks-project.streamlit.app
 
-## Black-Scholes validation
+## Black-Scholes Validation
 
+Validate of the correctness of the Black–Scholes implementation by comparing analytical Greeks with their numerical approximations. Option prices and sensitivities are computed using the closed-form Black–Scholes formulas. Numerical Greeks are obtained via finite difference methods (central difference), using small perturbations in the underlying parameters.  
 
+<img width="1200" height="600" alt="Delta" src="https://github.com/user-attachments/assets/dac62f7a-0241-467a-a0f0-16fe15ce321d" />  
+
+<img width="1200" height="600" alt="Gamma" src="https://github.com/user-attachments/assets/431fd447-5715-4704-a568-36c464b1dd39" />  
+
+The numerical estimates closely match the analytical values across all tested parameters, confirming the correctness and stability of the implementation. Small discrepancies arise due to finite difference approximation errors, particularly for higher-order Greeks such as Gamma.
 
 ## Delta Hedging.
 
