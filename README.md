@@ -26,7 +26,7 @@ Under these assumptions, the price of a European call option can be expressed an
 
 $$ C = S N(d_{1}) - K e^{- r (T - t)} N(d_{2}) $$
 
-Where where $S$ is the current stock price, $K$ is the strike price, $T$ is time to maturity and $N(d_{i})$ 
+Where $S$ is the current stock price, $K$ is the strike price, $T$ is time to maturity and $N(d_{i})$ 
 is the standard normal cumulative distribution function. Finally, $d_{1}$ and $d_{2}$ are quantities that are defined as below.
 
 $$ d_{1} = \frac{1}{\sigma \sqrt{T - t}} \bigg[log\bigg(\frac{S}{K}\bigg) + \bigg(r + \frac{\sigma^2}{2}\bigg) (T - t) \bigg]$$
