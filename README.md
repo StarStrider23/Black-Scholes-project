@@ -156,7 +156,7 @@ Analysis of the convergence of the Monte Carlo estimator and evaluation of the i
 | --------------------- | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 |          RMSE         | 0.0530 | 0.0247 | 0.0181 | 0.0083 | 0.0054 | 0.0028 | 0.0018 |  
 
-The Monte Carlo estimator converges to the Black–Scholes benchmark as the number of simulations increases. Meanwhile, the root mean square error (RMSE) decreases with number of simulations. This is due to the usage of the so-called control varaites technique. The Black–Scholes analytical price is used as a control variate. The adjusted estimator is constructed to reduce variance without increasing the number of simulations. The convergence rate is consistent with the theoretical $O(1/\sqrt(N))$ behavior.  
+The Monte Carlo estimator converges to the Black–Scholes benchmark as the number of simulations increases. Meanwhile, the root mean square error (RMSE) decreases with number of simulations. This is due to the usage of the so-called control varaites technique. The Black–Scholes analytical price is used as a control variate. The adjusted estimator is constructed to reduce variance without increasing the number of simulations. The convergence rate is consistent with the theoretical $O(N^{-1/2})$ behavior.  
 
 ## Monte Carlo vs Black-Scholes Option Pricing.
 
