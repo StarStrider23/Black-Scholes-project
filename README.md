@@ -148,7 +148,7 @@ Hedging error decreases as the rebalancing frequency increases, approaching zero
 
 ## Monte Carlo Convergence.
 
-Analysis of the convergence of the Monte Carlo estimator and evaluation of the impact of control variates on variance reduction. Simulations are performed under the risk-neutral measure using geometric Brownian motion. The option price is estimated for increasing numbers of simulated paths and results are averaged across 100 simulation runs to reduce Monte Carlo variability.
+Analysis of the convergence of the Monte Carlo estimator and evaluation of the impact of control variates on variance reduction. Simulations are performed under the risk-neutral measure using geometric Brownian motion. The option price is estimated for increasing numbers of simulated paths and results for each number of simulations are averaged across 100 simulation runs to reduce Monte Carlo variability.
 
 <img width="1200" height="600" alt="MC Convergence" src="https://github.com/user-attachments/assets/547ebd68-1918-4e9b-82ea-030ef8e826fe" />  
 
