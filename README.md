@@ -186,7 +186,7 @@ Monte Carlo estimates are consistent with Black–Scholes results, validating bo
 
 Computation of implied volatility by inverting the Black–Scholes pricing formula. Implied volatility is obtained numerically using an iterative root-finding method, such as Newton–Raphson, applied to match model prices to observed option prices.
 
-The project considered options with prices near the at-the-money (ATM) region, namely $0.9S < K < 1.1S$, with expiration date 2026-05-15, which implies that T = 28 days or T = 0.07671232876712329 years. The closing price at the end of the day (2026-04-15) of the simulation was $S$ = 266.42999267578125 $. The risk-free interest rate was 0.036119999885559084. 
+The project considered Apple Inc. (AAPL) options with prices near the at-the-money (ATM) region, namely $0.9S < K < 1.1S$, with expiration date 2026-05-15, which implies that T = 28 days or T = 0.07671232876712329 years. The closing price at the end of the day (2026-04-15) of the simulation was $S$ = 266.42999267578125 $. The risk-free interest rate was 0.036119999885559084. 
   
 <img width="1200" height="600" alt="IV" src="https://github.com/user-attachments/assets/005600d9-037a-42d4-b310-e07eb93f7c10" />  
   
