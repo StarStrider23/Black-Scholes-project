@@ -136,7 +136,7 @@ The blackscholes folder contains the implemented class for Black-Scholes model, 
 
 ## Black-Scholes Validation
 
-Validate of the correctness of the Black–Scholes implementation by comparing analytical Greeks with their numerical approximations. Option prices and sensitivities are computed using the closed-form Black–Scholes formulas. Numerical Greeks are obtained via finite difference methods (central difference), using small perturbations in the underlying parameters. The set of underlying stock prices used are in the range of 50 to 150.
+Validate of the correctness of the Black–Scholes implementation by comparing analytical Greeks with their numerical approximations. Option prices and sensitivities are computed using the closed-form Black–Scholes formulas. Numerical Greeks are obtained via finite difference methods (central difference), using small perturbations in the underlying parameters. The set of prices for the underlying stock used here is in the range of 50 to 150.
 
 <img width="1200" height="600" alt="Delta" src="https://github.com/user-attachments/assets/dac62f7a-0241-467a-a0f0-16fe15ce321d" />  
 
@@ -162,7 +162,7 @@ The Monte Carlo estimator converges to the Black–Scholes benchmark as the numb
 
 ## Monte Carlo vs Black-Scholes.
 
-Comparison of Monte Carlo and Black–Scholes pricing across different market conditions and sensitivities. Option prices and Greeks are evaluated across varying underlying prices. Monte Carlo estimates are compared to analytical Black–Scholes results. The set of underlying stock prices used are in the range of 50 to 150.
+Comparison of Monte Carlo and Black–Scholes pricing across different market conditions and sensitivities. Option prices and Greeks are evaluated across varying underlying prices. Monte Carlo estimates are compared to analytical Black–Scholes results. The set of prices for the underlying stock used here is in the range of 50 to 150.
 
 ### Option Pricing.
 
