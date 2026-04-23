@@ -18,9 +18,6 @@ def delta_hedging(S_0=100, K=100, r=0.05, sigma=0.2, T=1, steps=252,
     B = np.zeros((n_sim, steps+1))
     B[:, 0] = B_0
 
-    delta = np.zeros((n_sim, steps+1))
-    delta[:, 0] = delta_0
-
     t = np.linspace(0, T, steps+1)
     tau = T - t
     tau[-1] = 1e-10
