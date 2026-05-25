@@ -148,7 +148,7 @@ Moreover, a Streamlit-based interactive tool was developed to visualize numerica
 
 https://black-scholes-numerical-greeks-error.streamlit.app
 
-## Monte Carlo Convergence.
+## Monte Carlo Convergence
 
 Analysis of the convergence of the Monte Carlo estimator and evaluation of the impact of control variates on variance reduction. Simulations are performed under the risk-neutral measure using geometric Brownian motion. The option price is estimated for increasing numbers of simulated paths and results for each number of simulations (100, 500, 1000, 5000, 10000, 50000, 100000) are averaged across 100 simulation runs to reduce Monte Carlo variability. 
 
@@ -160,7 +160,7 @@ Analysis of the convergence of the Monte Carlo estimator and evaluation of the i
 
 The Monte Carlo estimator converges to the Black–Scholes benchmark as the number of simulations increases. Meanwhile, the Standard Error (SE) decreases with number of simulations. This is partially due to the usage of the so-called control varaites technique. The Black–Scholes analytical price is used as a control variate. The adjusted estimator is constructed to reduce variance without increasing the number of simulations. The convergence rate is consistent with the theoretical $O(N^{-1/2})$ behavior.  
 
-## Monte Carlo vs Black-Scholes.
+## Monte Carlo vs Black-Scholes
 
 Comparison of Monte Carlo and Black–Scholes pricing across different market conditions and sensitivities. Option prices and Greeks are evaluated across varying underlying prices. Monte Carlo estimates are compared to analytical Black–Scholes results. The set of prices for the underlying stock used here is in the range of 50 to 150.
 
@@ -188,7 +188,7 @@ Number of simulations is 50000. Step size h = 0.5.
   
 Monte Carlo estimates are consistent with Black–Scholes results, validating both implementations. However, Monte Carlo exhibits higher variability, particularly for second-order sensitivities such as Gamma, reflecting the increased difficulty of estimating higher-order derivatives via simulation.
 
-## Delta Hedging.
+## Delta Hedging
 
 Evaluation of the performance of a delta hedging strategy and quantification of hedging error under discrete rebalancing. A delta-hedged portfolio is constructed and rebalanced at discrete time intervals. The replication error is measured at maturity for different rebalancing frequencies. Number of steps are steps = (10, 25, 50, 100, 252, 500).  
 
