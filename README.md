@@ -186,7 +186,7 @@ Number of simulations is 50000. Step size h = 0.5.
   
 <img width="1200" height="600" alt="MC vs BS Gamma Error" src="https://github.com/user-attachments/assets/a77f478e-f908-4fe8-81eb-113a047f01ad" />  
   
-Monte Carlo estimates are consistent with Black–Scholes results, validating both implementations. However, Monte Carlo exhibits higher variability, particularly for second-order sensitivities such as Gamma, reflecting the increased difficulty of estimating higher-order derivatives via simulation.
+Monte Carlo estimates are consistent with Black–Scholes results, validating both implementations. However, Monte Carlo exhibits higher variability, particularly for second-order sensitivities such as Gamma.
 
 ## Delta Hedging
 
@@ -196,7 +196,7 @@ Evaluation of the performance of a delta hedging strategy and quantification of 
 
 <img width="1440" height="800" alt="HE vs RF bins" src="https://github.com/user-attachments/assets/d33601bf-13f8-4c8c-a541-d20a7c926e8b" />
 
-Hedging error decreases as the rebalancing frequency increases, approaching zero in the limit of continuous hedging. Residual error arises from discrete rebalancing and is amplified by higher volatility, illustrating the practical limitations of continuous-time assumptions.  
+Hedging error decreases as the rebalancing frequency increases, approaching zero in the limit of continuous hedging. Residual error arises from discrete rebalancing and is amplified by higher volatility.  
 
 ## Implied Volatility
 
