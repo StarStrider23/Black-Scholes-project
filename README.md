@@ -1,6 +1,6 @@
 # Implementing the Black-Scholes Model with Applications
 
-Project by Alexsey Chernichenko
+Project by Alexsey Chernichenko. April 2026.
 
 # Project Goal
 
