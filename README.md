@@ -144,7 +144,7 @@ Finally, implied volatility is computed by numerically inverting the Black–Sch
 
 All simulations and analyses are conducted for European call options even though the implemented framework supports both calls and puts. However, this restriction is without loss of generality, since results for put options follow directly from put–call parity.
 
-If not stated otherwise, the computations are done for the following values: $S$ = 100, $K$ = 100, $r$ = 0.05, $\sigma$ = 0.2, $T$ = 1, number of steps = 252 and number of simulations = 100000. 
+If not stated otherwise, the following values were used $S$ = 100, $K$ = 100, $r$ = 0.05, $\sigma$ = 0.2, $T$ = 1, number of steps = 252 and number of simulations = 100000. 
 
 # Structure
 
@@ -208,7 +208,7 @@ Monte Carlo estimates are consistent with Black–Scholes results, validating bo
 
 ## Delta Hedging
 
-Evaluation of the performance of a delta hedging strategy and quantification of hedging error under discrete rebalancing. A delta-hedged portfolio is constructed and rebalanced at discrete time intervals. The replication error is measured at maturity for different rebalancing frequencies. Number of steps are steps = (10, 25, 50, 100, 252, 500).  
+Evaluation of the performance of a delta hedging strategy and quantification of hedging error under discrete rebalancing. A delta-hedged portfolio is constructed and rebalanced at discrete time intervals. The replication error is measured at maturity for different rebalancing frequencies. Number of steps are (10, 25, 50, 100, 252, 500).  
 
 <img width="1200" height="600" alt="HE vs RF" src="https://github.com/user-attachments/assets/20a531d4-b799-44ef-9b3b-b192349dc66e" />
 
