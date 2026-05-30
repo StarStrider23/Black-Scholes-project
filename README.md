@@ -109,11 +109,11 @@ $$ V_{t_i} = \Delta_{t_i} S_{t_i} + B_{t_i} $$
 
 where $V_{t_i}$ is the option value, $S_{t_i}$ is the underlying asset price, $\Delta_{t_i}$ is the option delta and $B_{t_i}$ is the value of the cash account. Between rebalancing dates, the stock position remains unchanged while the cash account accumulates interest at the risk-free rate $r$.
 
-$$ B_{t_{i+1}} = B_{t_i} e^{r (t_{i+1} - t_i)} $$
+$$ B_{t_{i+1}} = B_{t_i} \exp{r (t_{i+1} - t_i)} $$
 
 At the next rebalancing date $t_{i+1}$, the option delta is recalculated and the stock position is adjusted from $\Delta_{t_i}$ to $\Delta_{t_{i+1}$. The cash account is updated according to
 
-$$ B_{t_{i+1}} = B_{t_i} e^{r (t_{i+1} - t_i)} - (\Delta_{t_{i+1}} - \Delta_{t_i}) S_{i+1} $$
+$$ B_{t_{i+1}} = B_{t_i} \exp{r (t_{i+1} - t_i)} - (\Delta_{t_{i+1}} - \Delta_{t_i}) S_{i+1} $$
 
 The portfolio value after rebalancing becomes
 
