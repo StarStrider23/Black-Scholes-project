@@ -4,7 +4,7 @@ Project by Alexsey Chernichenko. April 2026.
 
 # Project Goal
 
-The goal of this project is to build and validate a comprehensive quantitative framework for option pricing and risk analysis. The project begins with the implementation of the Black-Scholes model, including both analytical and numerical computation of option Greeks. It then extends to dynamic hedging through delta hedging simulations with a focus on analyzing hedging error as a function of rebalancing frequency.
+The goal of this project is to implement and validate the Black-Scholes framework for option pricing. The project begins with the implementation of the Black-Scholes model, including both analytical and numerical computation of option Greeks. It then extends to dynamic hedging through delta hedging simulations with a focus on analyzing hedging error as a function of rebalancing frequency.
 
 In addition, the project develops a Monte Carlo pricing engine, studies its convergence properties and applies variance reduction techniques such as control variates to improve efficiency. A detailed comparison between Monte Carlo and Black–Scholes methods is conducted, including pricing consistency and sensitivity analysis with respect to the underlying asset price, Delta ($\Delta$) and Gamma ($\Gamma$). Finally, the project incorporates implied volatility estimation.
 
@@ -12,7 +12,7 @@ In addition, the project develops a Monte Carlo pricing engine, studies its conv
 
 ## The Black-Scholes model
 
-The Black–Scholes model is a foundational framework in quantitative finance used to price European-style options. It provides a closed-form solution for option prices under a set of simplifying assumptions about market behavior. At its core, the model assumes that the underlying asset price follows a Geometric Brownian Motion with constant volatility and drift. Beyond that, there are also some additional assumptions: constant risk-free interest rate, frictionless markets (no transaction costs or taxes), no arbitrage opportunities exist and of course that the underlying asset doesn't pay dividends. 
+The Black–Scholes model is a foundational framework in quantitative finance used to price European-style options. It provides a closed-form solution for option prices under certain assumptions about market behavior. At its core, the model assumes that the underlying asset price follows a Geometric Brownian Motion with constant volatility and drift. Beyond that, there are also some additional assumptions: constant risk-free interest rate, frictionless markets (no transaction costs or taxes), no arbitrage opportunities exist and of course that the underlying asset doesn't pay dividends. 
 
 Mathematically speaking, the Black-Scholes model is a a second-order linear partial differential equation (PDE).
 
@@ -31,7 +31,7 @@ $$ d_{1} = \frac{1}{\sigma \sqrt{T - t}} \bigg[log\bigg(\frac{S}{K}\bigg) + \big
 
 $$ d_{2} = d_{1} - \sigma \sqrt{T - t} $$
 
-Intuitively, $d_{1}$ represents a standardized measure of how far the option is from being in-the-money (ITM) at maturity under the risk-neutral measure, taking into account both the expected growth of the stock price and its volatility. $d_{2}$ is closely related to $d_{1}$, but adjusted downward by a volatility term, which accounts for uncertainty over the remaining time to maturity. It can be interpreted as a standardized measure of terminal moneyness.
+Intuitively, $d_{1}$ represents a standardized measure of how far the option is from being in-the-money (ITM) at maturity under the risk-neutral measure, taking into account both the expected growth of the stock price and its volatility. $d_{2}$ is closely related to $d_{1}$, but adjusted downward by a volatility term which accounts for uncertainty over the remaining time to maturity. It can be interpreted as a standardized measure of terminal moneyness.
 
 The price of a correspondning put option can be derived via the put-call prity.
 
@@ -121,7 +121,8 @@ Under continuous rebalancing, this replication strategy reproduces the Black–S
 
 ## Implied Volatility (IV)
 
-Implied volatility is the volatility parameter that makes the Black–Scholes model match the observed market price of an option. Instead of being directly observed, it is obtained by inverting the pricing formula.
+Implied volatility is the volatility parameter that makes the Black–Scholes model match the observed market price of an option. Instead of being directly observed, it is obtained by inverting the pricing formula. It is therefore volatility implied by market option prices, if put simply.
+
 Formally, implied volatility $\sigma_{imp}$ is defined as the solution to:
 
 $$ C_{market} = C_{BS}(S, K, r, T, \sigma_{imp}) $$
@@ -132,13 +133,13 @@ $$ \sigma_{n+1} = \sigma_{n} - \frac{C_{BS}(\sigma_{n}) - C_{market}}{\nu(\sigma
 
 # Methodology
 
-The project follows a structured quantitative approach combining analytical modeling, numerical methods and simulation. First, the Black–Scholes model is implemented, including closed-form pricing and analytical expressions for the Greeks, alongside numerical approximations for validation.
+First, the Black–Scholes model is implemented, including closed-form pricing and analytical expressions for the Greeks, alongside numerical approximations for validation.
 
-A Monte Carlo framework is then developed to simulate the underlying asset dynamics under the risk-neutral measure. Convergence properties are analyzed and variance reduction techniques, specifically control variates, are applied to improve computational efficiency.
+A Monte Carlo framework is then developed to simulate the underlying asset dynamics. Its convergence properties are analyzed and variance reduction techniques (control variates) are applied to improve computational efficiency.
 
 To study risk management, a discrete-time delta hedging strategy is implemented. The hedging performance is evaluated by analyzing the replication error as a function of rebalancing frequency and market parameters.
 
-Finally, implied volatility is computed by numerically inverting the Black–Scholes formula, linking model outputs to observed market prices. Throughout the project, analytical and numerical results are systematically compared to assess accuracy, stability and consistency across methods.
+Finally, implied volatility is computed by numerically inverting the Black–Scholes formula, connecting model results to observed market prices. 
 
 All simulations and analyses are conducted for European call options even though the implemented framework supports both calls and puts. However, this restriction is without loss of generality, since results for put options follow directly from put–call parity.
 
@@ -152,7 +153,7 @@ The blackscholes folder contains the implemented class for Black-Scholes model, 
 
 ## Black-Scholes Validation
 
-Validation of the correctness of the Black–Scholes implementation by comparing analytical Greeks with their numerical approximations. Option prices and sensitivities are computed using the closed-form Black–Scholes formulas. Numerical Greeks are obtained via finite difference methods (central difference), using small perturbations in the underlying parameters. The set of prices for the underlying stock used here is in the range of 50 to 150.
+Validation of the correctness of the Black–Scholes model implementation by comparing analytical Greeks with their numerical approximations. Option prices and sensitivities are computed using the closed-form Black–Scholes formulas. Numerical Greeks are obtained via finite difference methods (central difference), using small perturbations in the underlying parameters. The set of prices for the underlying stock used here is in the range of 50 to 150.
 
 <img width="1200" height="600" alt="Delta" src="https://github.com/user-attachments/assets/dac62f7a-0241-467a-a0f0-16fe15ce321d" />  
 
@@ -166,7 +167,7 @@ https://black-scholes-numerical-greeks-error.streamlit.app
 
 ## Monte Carlo Convergence
 
-Analysis of the convergence of the Monte Carlo estimator and evaluation of the impact of control variates on variance reduction. Simulations are performed under the risk-neutral measure using geometric Brownian motion. The option price is estimated for increasing numbers of simulated paths and results for each number of simulations (100, 500, 1000, 5000, 10000, 50000, 100000) are averaged across 100 simulation runs to reduce Monte Carlo variability. 
+Analysis of the convergence of the Monte Carlo estimator and evaluation of the impact of control variates on variance reduction. The option price is estimated for increasing numbers of simulated paths and results for each number of simulations (100, 500, 1000, 5000, 10000, 50000, 100000) are averaged across 100 simulation runs to reduce Monte Carlo variability. 
 
 <img width="1200" height="600" alt="MC Convergence" src="https://github.com/user-attachments/assets/547ebd68-1918-4e9b-82ea-030ef8e826fe" />  
 
@@ -174,7 +175,7 @@ Analysis of the convergence of the Monte Carlo estimator and evaluation of the i
 | --------------------- | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 |    Standard Error     | 0.0530 | 0.0247 | 0.0181 | 0.0083 | 0.0054 | 0.0028 | 0.0018 |  
 
-The Monte Carlo estimator converges to the Black–Scholes benchmark as the number of simulations increases. Meanwhile, the Standard Error (SE) decreases with number of simulations. This is partially due to the usage of the so-called control varaites technique. The Black–Scholes analytical price is used as a control variate. The adjusted estimator is constructed to reduce variance without increasing the number of simulations. The convergence rate is consistent with the theoretical $O(N^{-1/2})$ behavior.  
+The Monte Carlo estimator converges to the Black–Scholes benchmark as the number of simulations increases. Meanwhile, the Standard Error (SE) decreases with number of simulations. This is partially due to the usage of the so-called control varaites technique. The Black–Scholes analytical price is used as a control variate. The convergence rate is consistent with the theoretical $O(N^{-1/2})$ behavior.  
 
 ## Monte Carlo vs Black-Scholes
 
@@ -202,7 +203,7 @@ Number of simulations is 50000. Step size h = 0.5.
   
 <img width="1200" height="600" alt="MC vs BS Gamma Error" src="https://github.com/user-attachments/assets/a77f478e-f908-4fe8-81eb-113a047f01ad" />  
   
-Monte Carlo estimates are consistent with Black–Scholes results, validating both implementations. However, Monte Carlo exhibits higher variability, particularly for second-order sensitivities such as Gamma.
+Monte Carlo estimates are consistent with Black–Scholes results, validating the implementation. However, Monte Carlo seem to exhibit higher variability for second-order sensitivities such as Gamma.
 
 ## Delta Hedging
 
@@ -212,11 +213,11 @@ Evaluation of the performance of a delta hedging strategy and quantification of 
 
 <img width="1440" height="800" alt="HE vs RF bins" src="https://github.com/user-attachments/assets/d33601bf-13f8-4c8c-a541-d20a7c926e8b" />
 
-Hedging error decreases as the rebalancing frequency increases, approaching zero in the limit of continuous hedging. Residual error arises from discrete rebalancing and is amplified by higher volatility.  
+Hedging error decreases as the rebalancing frequency increases and approache zero in the limit of continuous hedging. Residual error arises from discrete rebalancing and is amplified by higher volatility.  
 
 ## Implied Volatility
 
-Computation of implied volatility by inverting the Black–Scholes pricing formula. Implied volatility is obtained numerically using an iterative root-finding method, such as Newton–Raphson, applied to match model prices to observed option prices.
+Computation of implied volatility by inverting the Black–Scholes pricing formula. Implied volatility is obtained numerically using an iterative root-finding method (Newton–Raphson) applied to match model prices to observed option prices.
 
 The project considered Apple Inc. (AAPL) options with prices near the at-the-money (ATM) region, namely $0.9S < K < 1.1S$, with expiration date 2026-05-15, which implies that T = 28 days or T = 0.07671232876712329 years. The closing price at the end of the day (2026-04-15) of the simulation was $S$ = 266.42999267578125 $. The risk-free interest rate was 0.036119999885559084. 
   
@@ -236,22 +237,20 @@ The project considered Apple Inc. (AAPL) options with prices near the at-the-mon
 |      285       | False |       0.28601788      |     0.28625329    |    0.00555769    |       0.08       |
 |      290       | False |       0.28613995      |     0.28800836    |    0.00719459    |       0.65       |  
   
-The numerical procedure converges efficiently to the implied volatility, demonstrating the stability of the implementation. The results highlight how implied volatility serves as a bridge between observed market prices and model parameters.
+The numerical procedure converges efficiently to the implied volatility.
 
 # Discussion
 
-The results demonstrate that the implemented methods behave consistently with theoretical expectations. The Black–Scholes model provides stable and accurate analytical benchmarks, and the numerical approximation of Greeks shows nearly-perfect, if not perfect, correspondence with analytical values across the tested range. Any remaining discrepancies are minimal and primarily driven by finite difference discretization, with higher-order Greeks such as Gamma exhibiting greater sensitivity to the choice of step size. This is why the step sizes for each of the Greeks were chosen carefully beforehand using the interactive tool. 
+The results demonstrate that the implemented methods behave consistently with theoretical expectations. The Black–Scholes model provides stable and accurate analytical results, the numerical approximation of Greeks shows nearly perfect correspondence with analytical values across the tested range. Any remaining discrepancies are minimal and primarily driven by finite difference discretization, with higher-order Greeks such as Gamma being more sensitive to the choice of step size, which is why the step sizes for each of the Greeks were chosen carefully beforehand using the interactive tool. 
 
 Monte Carlo simulation produces unbiased estimates that converge to the analytical solution. The convergence behavior follows the expected $O(N^{-1/2})$ pattern. To make this comparison explicit, the Monte Carlo error and the reference curve were normalized to start at the same point since the Monte Carlo estimator is scaled by a constant factor that depends on variance. This normalization allows for a clearer comparison of convergence rates rather than absolute levels. 
 
 The application of control variates (using the underlying asset price as the control) significantly reduces the variance of the estimator. This choice is both natural and effective as the control is highly correlated with the payoff. As a result, the standard error decreases noticeably and continues to decline with the number of simulation which improves convergence without additional computational cost.
 
-The comparison between Monte Carlo and Black–Scholes shows strong consistency in pricing while also illustrating the increased difficulty of estimating sensitivities numerically within a simulation framework. This is particularly evident for second-order quantities such as Gamma, where noise in the estimator is more pronounced.
+The delta hedging analysis emphasizes the gap between theoretical and practical implementation. While continuous hedging eliminates risk in theory, discrete rebalancing introduces replication error. The results show that the standard deviation of the hedging error decreases as the rebalancing frequency increases which is consistent with theoretical expectations. The decay appears to be approximately inverse or even exponential, although it remains non-zero due to the discrete nature of rebalancing.
 
-The delta hedging analysis emphasizes the gap between theoretical and practical implementation. While continuous hedging eliminates risk in theory, discrete rebalancing introduces replication error. The results show that the standard deviation of the hedging error decreases as the rebalancing frequency increases, consistent with theoretical expectations. The decay appears to be approximately inverse or even exponential, reflecting the reduction of discretization error as hedging becomes more frequent, although it remains non-zero due to the discrete nature of rebalancing.
+Finally, the implied volatility results highlight deviations between model-implied and observed market behavior. The computed implied volatility exhibits a similar overall shape to the market data but differs in level, particularly for strike prices far from the current stock price. In the provided results, the discrepancy is largest (around 10%) for the deep ITM or OTM options and decreases as the strike approaches the ATM region where the estimates converge more closely. Beyond this region, the curves diverge again, though more gradually.
 
-Finally, the implied volatility results highlight deviations between model-implied and observed market behavior. The computed implied volatility exhibits a similar overall shape to the market data but differs in level, particularly for strikes far from the current stock price. In the provided results, the discrepancy is largest (around 10%) for deep in- or out-of-the-money options and decreases as the strike approaches the at-the-money region, where the estimates converge more closely. Beyond this region, the curves diverge again, though more gradually.
+The discrepancy between model-implied and market-implied volatility is most noticeable for strike prices far from the ATM region. This is because these option prices are primarily driven by tail probabilities of the underlying distribution where the Black–Scholes assumptions of constant volatility and log-normal returns are least realistic. After all, the market returns usually exhibit fat tails, skewness and their volatility changes over time.
 
-The discrepancy between model-implied and market-implied volatility is most pronounced for strikes far from the ATM region. This is because option prices in the wings are primarily driven by tail probabilities of the underlying distribution where the Black–Scholes assumptions of constant volatility and lognormal returns are least realistic. After all, the market returns usually exhibit fat tails, skewness and their volatility changes over time.
-
-In contrast, near the ATM region, option prices are less sensitive to tail behavior and are better approximated by a constant volatility model. As a result, implied volatilities tend to align more closely in this region and diverge in the wings, producing the observed volatility smile or skew.
+In contrast, near the ATM region, option prices are less sensitive to tail behavior and are better approximated by a constant volatility model. As a result, implied volatilities tend to align more closely in this region and diverge further away from the region which produces the observed volatility smile/skew/smirk.
